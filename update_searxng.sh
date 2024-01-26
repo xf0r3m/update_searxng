@@ -13,3 +13,5 @@ sudo -H ./utils/searxng.sh instance update
 
 sudo cp -vv /home/xf0r3m/searxng.png /usr/local/searxng/searxng-src/searx/static/themes/simple/img
 sudo cp -vv /home/xf0r3m/favicon.png /usr/local/searxng/searxng-src/searx/static/themes/simple/img
+sudo rm -v /usr/local/searxng/searxng-src/searx/static/themes/simple/img/favicon.svg
+sudo ln -v -s /usr/local/searxng/searxng-src/searx/static/themes/simple/img/favicon.png /usr/local/searxng/searxng-src/searx/static/themes/simple/img/favicon.svg

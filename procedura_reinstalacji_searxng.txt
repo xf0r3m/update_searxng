@@ -1,0 +1,19 @@
+Procedura reinstalacji SearxNG:
+1. sudo systemctl stop searxng-redis.service
+2. sudo service uwsgi stop searxng
+3. sudo rm /lib/systemd/system/searxng-redis.service
+4. sudo systemctl daemon-reload
+5. sudo rm /etc/uwsgi/apps-enabled/searxng.ini
+6. sudo rm /etc/uwsgi/apps-available/searxng.ini
+7. sudo reboot
+8. sudo userdel -r searxng
+9. sudo rm -rf /usr/share/searxng-redis
+10. sudo rm -rf ~/Downloads/searxng
+11. cd ~/Downloads
+12. git clone https://github.com/searxng/searxng.git searxng
+13. cd searxng
+14. sudo -H ./utils/searxng.sh install all # Na reverse proxy Apache odpowiadamy 'no'.
+15. sudo cp -vv /home/xf0r3m/searxng.png /usr/local/searxng/searxng-src/searx/static/themes/simple/img
+16. sudo cp -vv /home/xf0r3m/favicon.png /usr/local/searxng/searxng-src/searx/static/themes/simple/img 
+17. sudo rm /usr/local/searxng/searxng-src/searx/static/themes/simple/img/favicon.svg
+18. sudo ln -s /usr/local/searxng/searxng-src/searx/static/themes/simple/img/favicon.png /usr/local/searxng/searxng-src/searx/static/themes/simple/img/favicon.svg
